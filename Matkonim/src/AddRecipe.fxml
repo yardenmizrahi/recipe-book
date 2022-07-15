@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minWidth="730.0" prefHeight="654.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddRecipeView">
+	<top>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<padding>
+				<Insets bottom="5.0" top="5.0" />
+			</padding>
+			<children>
+				<Separator prefHeight="0.0" prefWidth="422.0" style="-fx-background-color: #171717;" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+				<Label alignment="CENTER" text="Add Recipe" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+					<font>
+						<Font name="System Bold" size="26.0" />
+					</font>
+				</Label>
+			</children>
+		</GridPane>
+	</top>
+	<center>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<padding>
+				<Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+			</padding>
+			<children>
+				<Label text="Name:" GridPane.halignment="LEFT">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets left="20.0" />
+					</GridPane.margin>
+				</Label>
+				<TextField fx:id="tfName" minWidth="250.0" promptText="Name" GridPane.columnIndex="1" GridPane.columnSpan="2">
+					<GridPane.margin>
+						<Insets left="20.0" right="20.0" />
+					</GridPane.margin>
+				</TextField>
+				<Label text="Cooking Time:" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets left="20.0" />
+					</GridPane.margin>
+				</Label>
+				<TextField fx:id="tfTime" minWidth="250.0" promptText="Time" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+					<GridPane.margin>
+						<Insets left="20.0" right="20.0" />
+					</GridPane.margin>
+				</TextField>
+				<Label text="Categorys:" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets left="20.0" />
+					</GridPane.margin>
+				</Label>
+				<ComboBox fx:id="cmbCategory" minWidth="250.0" promptText="Category" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+					<GridPane.margin>
+						<Insets left="60.0" />
+					</GridPane.margin>
+				</ComboBox>
+				<Button fx:id="btnAddCategory" minWidth="160.0" mnemonicParsing="false" onAction="#addCategoryAction" prefHeight="37.0" prefWidth="94.0" text="Add Category" textFill="#2200ff" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets right="40.0" />
+					</GridPane.margin>
+				</Button>
+				<ListView fx:id="allCategories" prefHeight="72.0" prefWidth="546.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.rowSpan="2">
+					<GridPane.margin>
+						<Insets left="20.0" right="20.0" top="5.0" />
+					</GridPane.margin>
+				</ListView>
+				<Button fx:id="btnRemoveCategory" minHeight="60.0" minWidth="100.0" mnemonicParsing="false" onAction="#removeCategoryAction" prefHeight="37.0" prefWidth="94.0" text="Remove &#10;Category" textAlignment="CENTER" textFill="#ff4d4d" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.rowSpan="2">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets right="40.0" />
+					</GridPane.margin>
+				</Button>
+				<Label text="Description:" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.rowSpan="2">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets left="20.0" />
+					</GridPane.margin>
+				</Label>
+				<TextArea fx:id="dsDescription" prefHeight="0.0" prefWidth="445.0" promptText="Description" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+					<GridPane.margin>
+						<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+					</GridPane.margin>
+				</TextArea>
+				<Label text="Ingredients:" GridPane.halignment="LEFT" GridPane.rowIndex="7">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets left="20.0" />
+					</GridPane.margin>
+				</Label>
+				<ComboBox fx:id="cmbIngredients" minWidth="250.0" promptText="Ingredient" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+					<GridPane.margin>
+						<Insets left="60.0" />
+					</GridPane.margin>
+				</ComboBox>
+            <Label text="Amount:" GridPane.rowIndex="8">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Enter Number:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="8">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="tfAmountNum" maxWidth="150.0" promptText="Amount" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </GridPane.margin>
+            </TextField>
+            <ComboBox fx:id="cmbAmountType" prefWidth="150.0" promptText="Amount Type" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets right="40.0" />
+               </GridPane.margin>
+            </ComboBox>
+				<Button fx:id="btnAddIngredient" minWidth="160.0" mnemonicParsing="false" onAction="#addIngredientAction" prefHeight="37.0" prefWidth="94.0" text="Add Ingredient" textFill="#2200ff" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets right="40.0" />
+					</GridPane.margin>
+				</Button>
+				<ListView fx:id="allIngredients" prefHeight="72.0" prefWidth="546.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="9" GridPane.rowSpan="2">
+					<GridPane.margin>
+						<Insets left="20.0" right="20.0" top="5.0" />
+					</GridPane.margin>
+				</ListView>
+				<Button fx:id="btnRemoveIngredient" minHeight="60.0" minWidth="100.0" mnemonicParsing="false" onAction="#removeIngredientAction" prefHeight="37.0" prefWidth="94.0" text="Remove &#10;Ingredient" textAlignment="CENTER" textFill="#ff4d4d" GridPane.halignment="RIGHT" GridPane.rowIndex="9" GridPane.rowSpan="2">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets left="20.0" right="40.0" />
+					</GridPane.margin>
+				</Button>
+			</children>
+		</GridPane>
+	</center>
+	<bottom>
+		<GridPane prefHeight="75.0" prefWidth="730.0" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Button fx:id="submit" minWidth="160.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="37.0" prefWidth="94.0" text="Submit" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+					<font>
+						<Font size="16.0" />
+					</font>
+					<GridPane.margin>
+						<Insets bottom="5.0" />
+					</GridPane.margin>
+				</Button>
+				<Label fx:id="errors" text="Errors:" textAlignment="CENTER" textFill="RED" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+					<GridPane.margin>
+						<Insets left="45.0" />
+					</GridPane.margin>
+				</Label>
+			</children>
+			<padding>
+				<Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+			</padding>
+		</GridPane>
+	</bottom>
+</BorderPane>
